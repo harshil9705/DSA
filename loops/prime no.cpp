@@ -1,21 +1,30 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
 int main()
 {
-    int n, i = 2;
+    int n;
+    bool isPrime = 1;
     cin >> n;
 
-    while (i < n)
+    for (int i = 2; i < n; i++)
     {
-        if(n%i== 0){
-            cout << "not prime number";
+        if (i % i == 0)
+        {
+            isPrime = 0;
+            break;
         }
-        else{
-            cout << "prime number";
-        }
-        i++;
     }
+
+    if (isPrime == 0)
+    {
+        cout << "is not a prime number" << endl;
+    }
+    else
+    {
+        cout << "is  prime number" << endl;
+    }
+
     return 0;
 }
