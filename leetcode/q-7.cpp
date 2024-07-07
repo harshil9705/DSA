@@ -5,24 +5,22 @@ using namespace std;
 
 int main()
 {
-    int n = 1000;
-    // cin >> n;
-
-    int ans = 0;
-    int i = 0;
-
+    int n, i = 0, ans = 0;
+    cin >> n;
     while (n != 0)
     {
         int digit = n % 10;
-        if (digit == 1)
+        if ((ans > INT32_MAX / 10) || (ans < INT32_MIN / 10))
         {
-
-            ans = ans + pow(2, i);
+            ans  = 0;
         }
+
+        ans = ans * 10 + digit;
         n = n / 10;
         i++;
     }
 
     cout << ans;
+
     return 0;
 }

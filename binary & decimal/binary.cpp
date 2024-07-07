@@ -14,7 +14,9 @@ int main()
 
     while ( n != 0)
     {
+        // find bit value
         int bit = n&1;
+        // store reverce bit in answer
         ans = (bit * pow(10,i)) + ans;
         n = n>>1;
         i++;
